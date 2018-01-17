@@ -1,0 +1,6 @@
+查看分支：git branch
+创建分支：git branch marketing-stddev-20180117
+切换分支：git checkout marketing-stddev-20180117
+切换+切换分支：git checkout -b marketing-stddev-20180118
+合并某分支到当前分支：git merge marketing-stddev-20180102
+删除分支：git branch -d marketing-stddev-20180101
