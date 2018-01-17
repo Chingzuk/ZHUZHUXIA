@@ -64,5 +64,34 @@ for (var i in a) {
     console.log(a[i]); // 'A', 'B', 'C'
 }
 
+'use strict';
+var a = ['A', 'B', 'C'];
+a.forEach(function (element, index, array) {
+    // element: 指向当前元素的值
+    // index: 指向当前索引
+    // array: 指向Array对象本身
+    console.log(element + ', index = ' + index+array);
+});
+A, index = 0A,B,C
+B, index = 1A,B,C
+C, index = 2A,B,C
 
+-- rest参数的使用
+function foo(a, b, ...rest) {
+    console.log('a = ' + a);
+    console.log('b = ' + b);
+    console.log(rest);
+}
+
+foo(1, 2, 3, 4, 5);
+// 结果:
+// a = 1
+// b = 2
+// Array [ 3, 4, 5 ]
+
+foo(1);
+// 结果:
+// a = 1
+// b = undefined
+// Array [] -- 这是空数组 不是undefined
 
