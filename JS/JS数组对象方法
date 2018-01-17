@@ -57,8 +57,12 @@ var xiaoming = {
 xiaoming.hasOwnProperty('name'); // true
 xiaoming.hasOwnProperty('toString'); // false
 
-
-
+注意：for in 对数组做循环拿到的是String也就是数组下标
+var a = ['A', 'B', 'C'];
+for (var i in a) {
+    console.log(i); // '0', '1', '2'
+    console.log(a[i]); // 'A', 'B', 'C'
+}
 
 
 
