@@ -1,0 +1,31 @@
+求和方法：
+function sum(arr) {
+    return arr.reduce(function (x, y) {
+        return x + y;
+    });
+}
+
+sum([1, 2, 3, 4, 5]); // 15
+
+各种专业文献上的"闭包"（closure）定义非常抽象，很难看懂。我的理解是，闭包就是能够读取其他函数内部变量的函数
+由于在Javascript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成"定义在一个函数内部的函数"。
+所以，在本质上，闭包就是将函数内部和函数外部连接起来的一座桥梁。
+http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html
+
+对于代码片段一
+
+object.getnameFunc() 返回的匿名闭包函数被全局变量所引用，其中的this指向
+
+全局变量，当执行时打印The Window 。
+
+对于代码片段二
+
+object.getnameFunc() 在返回闭包函数前，将this赋给that，此时getnameFunc是由
+
+object调用的，故而this指向object，当内部函数被返回时，由于闭包的特性，仍然
+
+能访问到外部函数中的值，当执行打印My Object 。
+
+我觉得是这样的，
+第一个里边的this指向的是那个闭包函数，
+第二个例子里边的this指向的是object。
